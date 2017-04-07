@@ -1,0 +1,29 @@
+Package: semisup
+Version: 0.99.12
+Title: Detecting SNPs with interactive effects on a quantitative trait
+Description: This R packages moves away from testing interaction terms,
+        and move towards testing whether an individual SNP is involved
+        in any interaction. This reduces the multiple testing burden to
+        one test per SNP, and allows for interactions with unobserved
+        factors. Analysing one SNP at a time, it splits the individuals
+        into two groups, based on the number of minor alleles. If the
+        quantitative trait differs in mean between the two groups, the
+        SNP has a main effect. If the quantitative trait differs in
+        distribution between some individuals in one group and all
+        other individuals, it possibly has an interactive effect.
+        Implicitly, the membership probabilities may suggest potential
+        interacting variables.
+biocViews: SNP, GenomicVariation, SomaticMutation, Genetics,
+        Classification, Clustering, DNASeq, Microarray,
+        MultipleComparison
+Depends: R (>= 3.4.0)
+Imports: SummarizedExperiment, VGAM
+Suggests: knitr, testthat
+Authors@R:
+        person("Armin","Rauschenberger",email="a.rauschenberger@vumc.nl",role=c("aut","cre"))
+VignetteBuilder: knitr
+License: GPL-3
+LazyData: true
+RoxygenNote: 6.0.1
+URL: https://github.com/rauschenberger/semisup
+BugReports: https://github.com/rauschenberger/semisup/issues

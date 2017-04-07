@@ -1,0 +1,40 @@
+template:
+  params:
+    bootswatch: spacelab
+    ganalytics: UA-96845398-1
+
+home:
+   links:
+   - text: "Download package"
+     href: http://bioconductor.org/packages/semisup/
+
+navbar:
+  title: "semisup"
+  left:
+    - text: "functions"
+      href: reference/index.html
+    - text: "vignette"
+      href: articles/vignette.html
+    - text: "article"
+      href: articles/article.html
+    - text: "news"
+      href:  news/index.html
+  right:
+    - icon: fa-github
+      href: https://github.com/rauschenberger/semisup
+    - icon: fa-download
+      href: http://bioconductor.org/packages/semisup/
+
+reference:
+  - title: "User functions"
+    contents: 
+      - mixtura
+      - scrutor
+  - title: "Internal functions"
+    contents:
+      - fit.wrap
+      - fit.norm
+      - fit.nbinom
+      - fit.zinb
+      - estim.nbinom
+      - resam.lrts

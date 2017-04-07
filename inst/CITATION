@@ -1,0 +1,18 @@
+citHeader("The R package semisup is based on the following article:")
+
+citEntry(entry="Article",
+    title = "Detecting SNPs with interactive effects on a quantitative trait",
+    author = personList(as.person("Armin Rauschenberger"),
+			     as.person("Renee X. Menezes"), 
+                             as.person("Mark A. van de Wiel"), 
+                             as.person("Natasja M. van Schoor"),
+			     as.person("Marianne A. Jonker")),
+    journal = "Manuscript in preparation",
+    volume= "0:0",
+    year = 2017,
+    url = "http://dx.doi.org/",
+    textVersion =
+		paste("Armin Rauschenberger, Renee X. Menezes, Mark A. van de Wiel, Natasja M. van Schoor, and Marianne A. Jonker (2017).",
+		"\"Detecting SNPs with interactive effects on a quantitative trait\",",
+        	"Manuscript in prepration, 0:0.")
+)
