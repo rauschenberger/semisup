@@ -63,7 +63,7 @@ help(semisup)
 \newpage \section{Scope}%-------------------------------------------------------
 %-------------------------------------------------------------------------------
 
-Data is available for $n$~samples. Let $\boldsymbol{y}={(y_1,\ldots,y_n)^T}$ represent the observations, $\boldsymbol{x}={(x_1,\ldots,x_n)^T}$ the groups, and $\boldsymbol{z}={(z_1,\ldots,z_n)^T}$ the classes. We assume all observations from the \textit{labelled} group are in class~\textcolor{blue}{A}, and those from \textit{unlabelled} group are in class~\textcolor{blue}{A} or in class~\textcolor{red}{B}.
+Data is available for $n$~samples. Let $\boldsymbol{y}={(y_1,\ldots,y_n)^T}$ represent the observations, $\boldsymbol{x}={(x_1,\ldots,x_n)^T}$ the groups, and $\boldsymbol{z}={(z_1,\ldots,z_n)^T}$ the classes. We assume all observations from the \textit{labelled} group are in class~\textcolor{blue}{A}, and those from the \textit{unlabelled} group are in class~\textcolor{blue}{A} or in class~\textcolor{red}{B}.
 \begin{table}[!h]
 \centering
 \begin{tabular}{l|ccc|ccccc}
@@ -202,7 +202,7 @@ text <- paste("N(-,-)",sep="")
 mtext(text=text,side=4,at=4,line=0.5,las=1,col="red")
 @
 
-Because the null distribution of the likelihood-ratio test statistic is unknown, we compare the hypotheses by resampling. The function \hyperref[scrutor]{scrutor} uses permutation:
+Because the null distribution of the likelihood-ratio test statistic is unknown, we compare the hypotheses by resampling. The function \hyperref[scrutor]{scrutor} uses parametric bootstrapping or permutation:
 
 <<eval=FALSE>>=
 scrutor(y,z)
@@ -480,7 +480,7 @@ scrutor(Y,Z)
 @
 
 %-------------------------------------------------------------------------------
-\newpage \section*{References}%-------------------------------------------------
+\section*{References}%----------------------------------------------------------
 %-------------------------------------------------------------------------------
 
 The R package \texttt{semisup} is based on Rauschenberger et al.~\cite{Rauschenberger2017}, where detailed references to previous work are given. If you use \texttt{semisup} for publications, please cite Rauschenberger et al.~\cite{Rauschenberger2017}. \newline

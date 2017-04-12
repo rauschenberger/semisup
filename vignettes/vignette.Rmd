@@ -8,12 +8,8 @@ vignette: >
 ---
 
 <!--html_preserve-->
-not yet available
-<!--/html_preserve-->
-
-<!--
-<object data="http://bioconductor.org/packages/release/bioc/vignettes/globalSeq/inst/doc/globalSeq.pdf" type="application/pdf" width="900px" height="700px"> 
-  <p>Download vignette <a href="http://bioconductor.org/packages/release/bioc/vignettes/globalSeq/inst/doc/globalSeq.pdf">here</a>.</p>  
+<object data="http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf" width="900px" height="700px"> 
+  <p>Download vignette <a href="http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf">here</a>.</p>  
  </object>
  </div>
--->
+<!--/html_preserve-->
