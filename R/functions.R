@@ -237,12 +237,12 @@ mixtura <- function(y,z,dist="norm",phi=NULL,pi=NULL,gamma=NULL,test=NULL,iter=1
         if(is.null(gamma)){
             gamma <- rep(1,times=n)
         }
-        pass$mu <- sum(y)/((1-pi)*n)
         if(is.null(phi) & is.null(pi)){
             temp <- semisup::estim.zinb(y=round(y),z=z,gamma=gamma)
             phi <- temp$phi
             pi <- temp$pi
         }
+        pass$mu <- sum(y)/((1-pi)*n)
     }
     
     #--- fitting ---------------------------------------------------------------
