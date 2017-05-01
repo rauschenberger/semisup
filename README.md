@@ -16,7 +16,7 @@ When testing for association between a quantitative trait and single nucleotide 
 Installation
 ------------
 
-The package semisup depends on [R &gt;= 3.4.0](https://cran.r-project.org/), and is available from [Bioconductor](http://bioconductor.org/packages/semisup/):
+The package semisup depends on [R &gt;= 3.0.0](https://cran.r-project.org/), and is available from [Bioconductor](http://bioconductor.org/packages/semisup/):
 
 ``` r
 source("https://bioconductor.org/biocLite.R")
