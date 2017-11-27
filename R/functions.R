@@ -28,7 +28,7 @@
 #' @param phi
 #' dispersion parameter(s)\strong{:}
 #' numeric vector of length \code{q},
-#' or \code{NULL}(\code{norm:} none, \code{nbinom:} MLE)
+#' or \code{NULL} (\code{norm:} none, \code{nbinom:} MLE)
 #' 
 #' @param pi
 #' zero-inflation parameter(s)\strong{:}
@@ -104,7 +104,7 @@ scrutor <- function(Y,Z,dist="norm",phi=NULL,pi=NULL,gamma=NULL,test="perm",iter
         ties <- apply(Y,2,function(y) length(unique(y))!=n)
         if(any(ties)){
             noise <- stats::runif(n=sum(ties)*n,min=0,max=0.001)
-            Y[,ties,drop=FALSE] <- Y[,ties,drop=FALSE] + noise
+            Y[,ties] <- Y[,ties,drop=FALSE] + noise
             warning("Argument \"Y\" contains ties.",call.=FALSE)
         }
     }
@@ -130,7 +130,9 @@ scrutor <- function(Y,Z,dist="norm",phi=NULL,pi=NULL,gamma=NULL,test="perm",iter
     list$y <- comb$y
     list$z <- comb$z
     list$lrts <- sapply(fit,function(x) x$lrts)
-    list$p.value <- sapply(fit,function(x) x$p.value)
+    if(!is.null(test)){
+        list$p.value <- sapply(fit,function(x) x$p.value)
+    }
     as.data.frame(list)
 }
 
@@ -452,6 +454,7 @@ fit.wrap <- function(y,z,dist,phi,pi,gamma,starts=1,it.em=100,epsilon=1e-04){
 #'            test="perm",pass=NULL)
 #' 
 resam.lrts <- function(y,z,dist,phi,pi,gamma,test,pass,...){
+    
     if(test=="perm"){
         
     #--- permutation -----------------------------------------------------------
@@ -461,10 +464,11 @@ resam.lrts <- function(y,z,dist,phi,pi,gamma,test,pass,...){
         gamma_sim <- gamma[order]
         semisup::fit.wrap(y=y_sim,z=z,dist=dist,
                 phi=phi,pi=pi,gamma=gamma_sim,...)$lrts
+        
     } else if(test=="boot") {
         
     #--- parametric bootstrap --------------------------------------------------
-        
+     
         if(dist=="norm"){
             y_sim <- stats::rnorm(pass$n,mean=pass$mean,sd=pass$sd)
         } else if(dist=="nbinom"){
@@ -630,6 +634,7 @@ fit.norm <- function(y,z,it.em,epsilon){
 #' it.em=100,epsilon=1e-04)
 #' 
 fit.nbinom <- function(y,z,phi,gamma,it.em,epsilon){
+    
     x <- 1*is.na(z)
     n <- length(y)
     
@@ -643,8 +648,8 @@ fit.nbinom <- function(y,z,phi,gamma,it.em,epsilon){
         
         #--- maximisation step -------------------------------------------------
         
-        mu0 <- sum(z0*y)/sum(z0)
-        mu1 <- sum(z1*y)/sum(z1)
+        mu0 <- sum(z0*y/gamma)/sum(z0)
+        mu1 <- sum(z1*y/gamma)/sum(z1)
         
         p0 <- sum(z0*x)/sum(x)
         if(is.na(p0)){p0 <- 0.5}
@@ -758,8 +763,8 @@ fit.zinb <- function(y,z,phi,pi,gamma,it.em,epsilon){
         
         #--- maximisation step -------------------------------------------------
         
-        mu0 <- sum(z0*y)/((1-pi)*sum(z0))
-        mu1 <- sum(z1*y)/((1-pi)*sum(z1))
+        mu0 <- sum(z0*y/((1-pi)*gamma))/sum(z0)
+        mu1 <- sum(z1*y/((1-pi)*gamma))/sum(z1)
         
         p0 <- sum(z0*x)/sum(x)
         if(is.na(p0)){p0 <- 0.5}
@@ -990,7 +995,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     
     #--- distribution ----------------------------------------------------------
     
-    if(class(dist)!="character"){
+    if(!is.character(dist) & !is.factor(dist)){
         stop("Argument \"dist\" must of type \"character\".",call.=FALSE)
     }
     
@@ -1003,6 +1008,11 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
              call.=FALSE)
     }
     
+    if(dist=="zinb" & (is.null(phi) != is.null(pi))){
+        stop("Provide both or none of \"phi\" and \"pi\".",
+             call.=FALSE)
+    }
+    
     #--- dispersion ------------------------------------------------------------
     
     if(!is.null(phi)){
@@ -1010,12 +1020,12 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
             warning("Ignoring \"phi\" (because \"dist\" is \"norm\").",
                     call.=FALSE)
         } else {
-            if(class(phi)!="numeric"){
+            if(!is.numeric(phi)){
                 stop("Argument \"phi\" must be of type \"numeric\".",
                      call.=FALSE)
             }
             if(length(phi)!=ncol(Y)){
-                stop("Argument \"phi\" must have length p.",call.=FALSE)
+                stop("Argument \"phi\" must have length q.",call.=FALSE)
             }
             if(any(!is.finite(phi))){
                 stop("Argument \"phi\" must be finite.",call.=FALSE)
@@ -1029,11 +1039,11 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- zero-inflation --------------------------------------------------------
     
     if(!is.null(pi)){
-        if(dist=="norm"){
-            warning("Ignoring \"pi\" (because \"dist\" is \"norm\").",
+        if(dist!="nbinom"){
+            warning("Ignoring \"pi\" (because \"dist\" is not \"zinb\").",
                 call.=FALSE)
         } else {
-            if(class(pi)!="numeric"){
+            if(!is.numeric(pi)){
                 stop("Argument \"pi\" must be of type \"numeric\".",
                      call.=FALSE)
             }
@@ -1056,7 +1066,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
             warning("Ignoring \"gamma\" (because \"dist\" is \"norm\").",
                 call.=FALSE)
         } else {
-            if(class(gamma)!="numeric"){
+            if(!is.numeric(gamma)){
                 stop("Argument \"gamma\" must be of type \"numeric\".",
                      call.=FALSE)
             }
@@ -1075,7 +1085,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- test ------------------------------------------------------------------
     
     if(!is.null(test)){
-        if(class(test)!="character"){
+        if(!is.character(test) & !is.factor(test)){
             stop("Argument \"test\" must of type \"character\".",call.=FALSE)
         }
         
@@ -1093,7 +1103,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- iter ------------------------------------------------------------------
     
     if(!is.null(iter)){
-        if(!class(iter) %in% c("integer","numeric")){
+        if(!is.integer(iter) & !is.numeric(iter)){
             stop("Argument \"iter\" must be of type \"integer\".",call.=FALSE)
         }
         if(length(iter)!=1){
@@ -1113,7 +1123,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- kind ------------------------------------------------------------------
     
     if(!is.null(kind)){
-        if(class(kind)!="numeric"){
+        if(!is.numeric(kind)){
             stop("Argument \"kind\" must be of type \"numeric\".",call.=FALSE)
         }
         if(length(kind)!=1){
@@ -1126,7 +1136,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
             stop("Argument \"kind\" must be between 0 and 1.",call.=FALSE)
         }
         if(kind==0){
-            stop("Not yet implemented: \"kind=0\".")
+            stop("Not yet implemented: \"kind=0\".",call.=FALSE)
         } else {
             if(iter < (1/kind)){
                 stop("Set \"iter\" to 1/kind or larger.",call.=FALSE)
@@ -1137,7 +1147,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- it.em -----------------------------------------------------------------
     
     if(!is.null(it.em)){
-        if(!class(it.em) %in% c("integer","numeric")){
+        if(!is.integer(it.em) & !is.numeric(it.em)){
             stop("Argument \"it.em\" must be of type \"integer\".",call.=FALSE)
         }
         if(length(it.em)!=1){
@@ -1157,7 +1167,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- epsilon ---------------------------------------------------------------
     
     if(!is.null(epsilon)){
-        if(!class(epsilon) %in% c("numeric")){
+        if(!is.numeric(epsilon)){
             stop("Argument \"epsilon\" must be of type \"numeric\".",call.=FALSE)
         }
         if(length(it.em)!=1){
@@ -1174,7 +1184,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- starts ----------------------------------------------------------------
     
     if(!is.null(starts)){
-        if(!class(starts) %in% c("integer","numeric")){
+        if(!is.integer(starts) & !is.numeric(starts)){
             stop("Argument \"starts\" must be of type \"integer\".",call.=FALSE)
         }
         if(length(starts)!=1){

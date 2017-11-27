@@ -209,4 +209,14 @@ testthat::test_that("compare \"zinb\"",{
     testthat::expect_identical(object=b,expected=a)
 })
 
+testthat::test_that("compare \"nbinom\" and \"zinb\"",{
+    sim <- sim.zinb()
+    y <- sim$y; z <- sim$z; gamma <- sim$gamma
+    set.seed(1)
+    a <- semisup::mixtura(y=y,z=z,dist="nbinom",gamma=gamma,phi=0.05)$lrts
+    set.seed(1)
+    b <- semisup::mixtura(y=y,z=z,dist="zinb",pi=0,phi=0.05,gamma=gamma)$lrts
+    testthat::expect_identical(object=b,expected=a)
+})
+
 

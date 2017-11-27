@@ -27,7 +27,6 @@ Alternatively, it can be installed from [GitHub](https://github.com/rauschenberg
 
 ``` r
 devtools::install_github("rauschenberger/semisup",build_vignettes=TRUE)
-devtools::install_github("Bioconductor-mirror/semisup",build_vignettes=TRUE)
 ```
 
 Please restart R before loading the package and its documentation:
@@ -42,3 +41,14 @@ Reference
 ---------
 
 A Rauschenberger, RX Menezes, MA van de Wiel, NM van Schoor, and MA Jonker (2017). Detecting SNPs with interactive effects on a quantitative trait. Manuscript in preparation. <!-- [html](http://dx.doi.org/) [pdf](http://) -->
+
+<!-- [html]
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96845398-1', 'auto');
+  ga('send', 'pageview');
+</script>
+-->
