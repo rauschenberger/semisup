@@ -40,7 +40,7 @@ utils::vignette("semisup")
 Reference
 ---------
 
-A Rauschenberger, RX Menezes, MA van de Wiel, NM van Schoor, and MA Jonker (2017). Detecting SNPs with interactive effects on a quantitative trait. Manuscript in preparation. <!-- [html](http://dx.doi.org/) [pdf](http://) -->
+A Rauschenberger, RX Menezes, MA van de Wiel, NM van Schoor, and MA Jonker (2018). Detecting SNPs with interactive effects on a quantitative trait. Manuscript in preparation. <!-- [html](http://dx.doi.org/) [pdf](http://) -->
 
 <!-- [html]
 <script>
