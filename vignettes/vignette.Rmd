@@ -9,7 +9,7 @@ vignette: >
 
 <!--html_preserve-->
 <object data="http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf" width="900px" height="700px"> 
-  <p>Download vignette <a href="http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf">here</a>.</p>  
+  <p>Please unblock content, or download vignette <a href="http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf">here</a>.</p>  
  </object>
  </div>
 <!--/html_preserve-->

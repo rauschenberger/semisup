@@ -7,6 +7,4 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-<!--html_preserve-->
-not yet available
-<!--/html_preserve-->
+The `semisup` manuscript is in preparation.
