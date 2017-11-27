@@ -28,7 +28,7 @@ or \code{"zinb"} (zero-inflated negative binomial)}
 
 \item{phi}{dispersion parameter(s)\strong{:}
 numeric vector of length \code{q},
-or \code{NULL}(\code{norm:} none, \code{nbinom:} MLE)}
+or \code{NULL} (\code{norm:} none, \code{nbinom:} MLE)}
 
 \item{pi}{zero-inflation parameter(s)\strong{:}
 numeric vector of length \code{q},
