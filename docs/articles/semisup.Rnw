@@ -489,7 +489,7 @@ Consider shrinkage estimation (Robinson et al.~\cite{Robinson2008}) and scale no
 
 \begingroup
 \renewcommand{\section}[2]{}
-\bibliography{semisup}
+\bibliography{references}
 \endgroup
 
 \end{document}
