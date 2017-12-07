@@ -131,9 +131,9 @@ scrutor <- function(Y,Z,dist="norm",phi=NULL,pi=NULL,gamma=NULL,test="perm",iter
     list$z <- comb$z
     list$tau <- sapply(fit,function(x) x$estim1$p1)
     if(dist=="norm"){
-        list$mud <- sapply(fit,function(x) abs(x$estim1$mean0-x$estim1$mean1))
+        list$delta <- sapply(fit,function(x) abs(x$estim1$mean0-x$estim1$mean1))
     } else {
-        list$mud <- sapply(fit,function(x) abs(x$estim1$mu0-x$estim1$mu1))
+        list$delta <- sapply(fit,function(x) abs(x$estim1$mu0-x$estim1$mu1))
     }
     list$lrts <- sapply(fit,function(x) x$lrts)
     if(!is.null(test)){
