@@ -133,9 +133,14 @@ scrutor <- function(Y,Z,dist="norm",phi=NULL,pi=NULL,gamma=NULL,test="perm",iter
     if(dist=="norm"){
         list$delta <- sapply(fit,function(x) 
             abs(x$estim1$mean0-x$estim1$mean1)/abs(x$estim0$mean0))
-    } else {
+    }
+    if(dist %in% c("nbinom","zinb")){
         list$delta <- sapply(fit,function(x) 
             abs(x$estim1$mu0-x$estim1$mu1)/abs(x$estim0$mu0))
+        list$phi <- sapply(fit,function(x) x$estim0$phi)
+        if(dist=="zinb"){
+            list$pi <- sapply(fit,function(x) x$estim0$pi)
+        }
     }
     list$lrts <- sapply(fit,function(x) x$lrts)
     if(!is.null(test)){
