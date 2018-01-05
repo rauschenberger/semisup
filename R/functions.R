@@ -904,8 +904,8 @@ estim.zinb <- function(y,z,gamma){
     
     # initial values
     par <- function(y){
-        mu <- mean(y[y!=0])
-        sd <- sd(y[y!=0])
+        mu <- max(0.01,mean(y[y!=0]),na.rm=TRUE)
+        sd <- max(0.01,sd(y[y!=0]),na.rm=TRUE)
         phi <- max(0.01,(sd^2-mu)/mu^2)
         pi <- min(0.99,max(0.01,mean(y==0)))
         c(mu,phi,pi)
