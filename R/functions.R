@@ -1052,7 +1052,7 @@ debug <- function(y,z,dist,phi,pi,gamma,test,iter,kind,...){
     #--- zero-inflation --------------------------------------------------------
     
     if(!is.null(pi)){
-        if(dist!="nbinom"){
+        if(dist!="zinb"){
             warning("Ignoring \"pi\" (because \"dist\" is not \"zinb\").",
                 call.=FALSE)
         } else {
