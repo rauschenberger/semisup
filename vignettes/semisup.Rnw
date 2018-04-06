@@ -483,7 +483,7 @@ scrutor(Y,Z)
 \section*{References}%----------------------------------------------------------
 %-------------------------------------------------------------------------------
 
-The R package \texttt{semisup} is based on Rauschenberger et al.~\cite{Rauschenberger2017}, where detailed references to previous work are given. If you use \texttt{semisup} for publications, please cite Rauschenberger et al.~\cite{Rauschenberger2017}. \newline
+The R package \texttt{semisup} is based on Rauschenberger et al.~\cite{Rauschenberger2018}, where detailed references to previous work are given. If you use \texttt{semisup} for publications, please cite Rauschenberger et al.~\cite{Rauschenberger2018}. \newline
 
 Consider shrinkage estimation (Robinson et al.~\cite{Robinson2008}) and scale normalisation (Robinson et al.~\cite{Robinson2010}) to improve the negative binomial mixture model (R package \href{http://bioconductor.org/packages/edgeR/}{edgeR}). Use the non-parametric mixture test (van Wieringen et al.~\cite{VanWieringen2008}) to increase robustness against outliers (R package \href{http://www.few.vu.nl/~wvanwie/software/TestForPDE/TestForPDE.html}{PDGEtest}).
 
