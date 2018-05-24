@@ -15,13 +15,6 @@ knitr::opts_chunk$set(
 
 [![Travis-CI Build Status](https://travis-ci.org/rauschenberger/semisup.svg?branch=master)](https://travis-ci.org/rauschenberger/semisup)
 [![Coverage Status](https://codecov.io/github/rauschenberger/semisup/coverage.svg?branch=master)](https://codecov.io/github/rauschenberger/semisup?branch=master)
-<!-- [![Platforms](http://www.bioconductor.org/shields/availability/release/semisup.svg)](http://bioconductor.org/packages/devel/bioc/html/semisup.html#archives)
- [![Downloads](http://www.bioconductor.org/shields/downloads/semisup.svg)](http://bioconductor.org/packages/stats/bioc/semisup/)
-[![Posts](http://www.bioconductor.org/shields/posts/semisup.svg)](https://support.bioconductor.org/t/semisup/)
-[![in Bioc](http://www.bioconductor.org/shields/years-in-bioc/semisup.svg)](http://bioconductor.org/packages/devel/bioc/html/semisup.html#since)
-[![Build](http://www.bioconductor.org/shields/build/devel/bioc/semisup.svg)](http://bioconductor.org/checkResults/devel/bioc-LATEST/semisup/)
-[![Commits](http://www.bioconductor.org/shields/commits/bioc/semisup.svg)](http://bioconductor.org/packages/devel/bioc/html/semisup.html#svn_source)
-[![Coverage Status](http://www.bioconductor.org/shields/coverage/devel/semisup.svg)](https://codecov.io/github/Bioconductor-mirror/semisup/branch/master) -->
 
 ## Scope
 
@@ -50,5 +43,11 @@ utils::vignette("semisup")
 ## Reference
 
 A Rauschenberger, RX Menezes, MA van de Wiel, NM van Schoor, and MA Jonker (2018). Detecting SNPs with interactive effects on a quantitative trait.
-Manuscript in preparation.
-<!-- [html](http://dx.doi.org/) [pdf](http://) -->
+Manuscript in preparation. [html](https://arxiv.org/abs/1805.09175) [pdf](https://arxiv.org/pdf/1805.09175)
+
+[![Platforms](http://www.bioconductor.org/shields/availability/devel/semisup.svg)](http://bioconductor.org/packages/devel/bioc/html/semisup.html#archives)
+ [![Downloads](http://www.bioconductor.org/shields/downloads/semisup.svg)](http://bioconductor.org/packages/stats/bioc/semisup/)
+[![Posts](http://www.bioconductor.org/shields/posts/semisup.svg)](https://support.bioconductor.org/t/semisup/)
+[![in Bioc](http://www.bioconductor.org/shields/years-in-bioc/semisup.svg)](http://bioconductor.org/packages/devel/bioc/html/semisup.html#since)
+[![Build](http://www.bioconductor.org/shields/build/devel/bioc/semisup.svg)](http://bioconductor.org/checkResults/devel/bioc-LATEST/semisup/)
+
