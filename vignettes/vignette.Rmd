@@ -7,10 +7,10 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Click [here](http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf) to download vignette.
+Click [here](https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf) to download vignette.
 
 <div>
- <object data="http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf" width="130%" height="600px">
-  <embed src="http://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf">
+ <object data="https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf" width="130%" height="600px">
+  <embed src="https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf">
  </object>
 </div>
