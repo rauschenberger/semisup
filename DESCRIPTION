@@ -6,11 +6,11 @@ biocViews: SNP, GenomicVariation, SomaticMutation, Genetics,
     Classification, Clustering, DNASeq, Microarray, MultipleComparison
 Depends: R (>= 3.0.0)
 Imports:
-    SummarizedExperiment,
     VGAM
 Suggests:
     knitr,
-    testthat
+    testthat,
+    SummarizedExperiment
 Authors@R: person("Armin","Rauschenberger",email="a.rauschenberger@vumc.nl",role=c("aut","cre"))
 VignetteBuilder: knitr
 License: GPL-3
