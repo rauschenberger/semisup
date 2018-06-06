@@ -2,6 +2,10 @@ template:
   params:
     bootswatch: spacelab
 
+authors:
+  Armin Rauschenberger:
+    href: https://rauschenberger.github.io
+
 home:
    links:
    - text: "Download package"

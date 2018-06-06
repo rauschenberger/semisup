@@ -14,5 +14,6 @@ citEntry(entry="Article",
     textVersion =
 		paste("Armin Rauschenberger, Renee X. Menezes, Mark A. van de Wiel, Natasja M. van Schoor, and Marianne A. Jonker (2017).",
 		"\"Detecting SNPs with interactive effects on a quantitative trait\",",
-        	"Manuscript in prepration, 0:0.")
+        	"Manuscript in prepration, 0:0.",
+		"http://arxiv.org/abs/1805.09175")
 )
