@@ -2,7 +2,7 @@
 ---
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{pkgdown}
+  %\VignetteIndexEntry{vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,7 +10,6 @@ vignette: >
 Click [here](https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf) to download vignette.
 
 <div>
- <object data="https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf" width="130%" height="600px">
-  <embed src="https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf">
- </object>
+<object data="https://bioconductor.org/packages/devel/bioc/vignettes/semisup/inst/doc/semisup.pdf" type="application/pdf" width="130%" height="550px">
+</object>
 </div>

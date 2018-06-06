@@ -3,6 +3,8 @@
 
 [![Travis-CI Build
 Status](https://travis-ci.org/rauschenberger/semisup.svg?branch=master)](https://travis-ci.org/rauschenberger/semisup)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/rauschenberger/semisup?svg=true)](https://ci.appveyor.com/project/rauschenberger/semisup)
 [![Coverage
 Status](https://codecov.io/github/rauschenberger/semisup/coverage.svg?branch=master)](https://codecov.io/github/rauschenberger/semisup?branch=master)
 
