@@ -35,7 +35,7 @@ The package semisup depends on [R
 ``` r
 if (!requireNamespace("BiocManager", quietly=TRUE))
     install.packages("BiocManager")
-BiocInstaller::biocLite("semisup")
+BiocManager::install("semisup")
 ```
 
 Alternatively, it can be installed from

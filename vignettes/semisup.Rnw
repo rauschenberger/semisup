@@ -30,7 +30,7 @@ Start with installing \textbf{semisup} from Bioconductor\footnote{\href{https://
 <<eval=FALSE>>=
 if (!requireNamespace("BiocManager", quietly=TRUE))
     install.packages("BiocManager")
-BiocInstaller::biocLite("semisup")
+BiocManager::install("semisup")
 @
 
 Then load and attach the package:
