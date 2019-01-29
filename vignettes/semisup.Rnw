@@ -1,5 +1,5 @@
 %\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{semisup}
+%\VignetteIndexEntry{vignette source}
 %\VignetteEncoding{UTF-8}
 \documentclass{article}
 \setlength\parindent{0pt}
