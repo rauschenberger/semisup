@@ -35,8 +35,9 @@ The package semisup depends on [R
 [Bioconductor](http://bioconductor.org/packages/semisup/):
 
 ``` r
-source("https://bioconductor.org/biocLite.R")
-BiocInstaller::biocLite("semisup")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("semisup")
 ```
 
 Alternatively, it can be installed from

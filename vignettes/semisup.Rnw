@@ -28,8 +28,9 @@ This vignette explains how to use the R~package \textbf{semisup}. Use the functi
 Start with installing \textbf{semisup} from Bioconductor\footnote{\href{https://cran.r-project.org/web/packages/devtools/README.html}{devtools} and \href{https://github.com/rauschenberger/semisup}{GitHub}: \texttt{devtools::install\_github("rauschenberger/semisup")}}:
 
 <<eval=FALSE>>=
-source("https://bioconductor.org/biocLite.R")
-BiocInstaller::biocLite("semisup")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("semisup")
 @
 
 Then load and attach the package:
