@@ -8,21 +8,25 @@
 
 <title>Model fitting — mixtura • semisup</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,12 +34,13 @@
 
 
 
-<meta property="og:title" content="Model fitting — mixtura" />
 
+<meta property="og:title" content="Model fitting — mixtura" />
 <meta property="og:description" content="This function fits a semi-supervised mixture model.
 It simultaneously estimates two mixture components,
 and assigns the unlabelled observations to these." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -47,6 +52,7 @@ and assigns the unlabelled observations to these." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -84,7 +90,6 @@ and assigns the unlabelled observations to these." />
   <a href="../news/index.html">news</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rauschenberger/semisup">
@@ -105,6 +110,7 @@ and assigns the unlabelled observations to these." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -116,18 +122,16 @@ and assigns the unlabelled observations to these." />
     </div>
 
     <div class="ref-description">
-    
     <p>This function fits a semi-supervised mixture model.
 It simultaneously estimates two mixture components,
 and assigns the unlabelled observations to these.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>mixtura</span>(<span class='no'>y</span>, <span class='no'>z</span>, <span class='kw'>dist</span> <span class='kw'>=</span> <span class='st'>"norm"</span>,
         <span class='kw'>phi</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pi</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gamma</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
         <span class='kw'>test</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>kind</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
         <span class='kw'>debug</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -151,14 +155,14 @@ or <code>"zinb"</code> (zero-inflated negative binomial)</p></td>
     </tr>
     <tr>
       <th>phi</th>
-      <td><p>dispersion parameter<strong>:</strong>
-positive numeric,
+      <td><p>dispersion parameters<strong>:</strong>
+numeric vector of length <code>q</code>,
 or <code>NULL</code></p></td>
     </tr>
     <tr>
       <th>pi</th>
-      <td><p>zero-inflation parameter<strong>:</strong>
-numeric between 0 and 1,
+      <td><p>zero-inflation parameter(s)<strong>:</strong>
+numeric vector of length <code>q</code>,
 or <code>NULL</code></p></td>
     </tr>
     <tr>
@@ -197,7 +201,7 @@ all <code>p</code>-values above <code>kind</code> are approximate</p></td>
 (see <code><a href='arguments.html'>arguments</a></code>)</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>This function fits and compares a one-component (<code>H0</code>)
@@ -220,32 +224,30 @@ positive numeric</p></dd>
 <dt>p.value</dt><dd><p><code>H0</code> versus <code>H1</code><strong>:</strong>
 numeric between <code>0</code> and <code>1</code>, or <code>NULL</code></p></dd>
 
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>By default, <code>phi</code> and <code>pi</code>
 are estimated by the maximum likelihood method,
 and <code>gamma</code> is replaced by a vector of ones.</p>
-    
     <h2 class="hasAnchor" id="reference"><a class="anchor" href="#reference"></a>Reference</h2>
 
     
-    <p>A Rauschenberger, RX Menezes, MA van de Wiel,
-NM van Schoor, and MA Jonker (2017).
-"Detecting SNPs with interactive effects on a quantitative trait",
+
+<p>A Rauschenberger, RX Menezes, MA van de Wiel,
+NM van Schoor, and MA Jonker (2020).
+"Semi-supervised mixture test for
+detecting markers associated with a quantitative trait",
 <em>Manuscript in preparation</em>.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Use <code><a href='scrutor.html'>scrutor</a></code> for hypothesis testing.
 All other functions are <code><a href='internal.html'>internal</a></code>.</p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># data simulation</span>
 <span class='no'>n</span> <span class='kw'>&lt;-</span> <span class='fl'>100</span>
-<span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>,<span class='kw'>each</span><span class='kw'>=</span><span class='no'>n</span>/<span class='fl'>2</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Normal'>rnorm</a></span>(<span class='kw'>n</span><span class='kw'>=</span><span class='no'>n</span>,<span class='kw'>mean</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>sd</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>,<span class='kw'>each</span><span class='kw'>=</span><span class='no'>n</span>/<span class='fl'>2</span>)
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='kw'>n</span><span class='kw'>=</span><span class='no'>n</span>,<span class='kw'>mean</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>sd</span><span class='kw'>=</span><span class='fl'>1</span>)
 <span class='no'>z</span>[(<span class='no'>n</span>/<span class='fl'>4</span>):<span class='no'>n</span>] <span class='kw'>&lt;-</span> <span class='fl'>NA</span>
 
 <span class='co'># model fitting</span>
@@ -253,43 +255,43 @@ All other functions are <code><a href='internal.html'>internal</a></code>.</p></
 #&gt;   [1] 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
 #&gt;   [8] 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
 #&gt;  [15] 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
-#&gt;  [22] 0.0000000 0.0000000 0.0000000 0.5738125 0.5285509 0.4472526 0.6403160
-#&gt;  [29] 0.5985376 0.5127863 0.7149695 0.7765562 0.6654932 0.5114071 0.5262749
-#&gt;  [36] 0.6945105 0.5573818 0.6388233 0.7925439 0.5140092 0.7407126 0.6102265
-#&gt;  [43] 0.3666887 0.5391078 0.6080527 0.5082169 0.3374890 0.4570243 0.4573663
-#&gt;  [50] 0.5712310 0.5911485 0.3705077 0.5635904 0.6853712 0.5290796 0.4815891
-#&gt;  [57] 0.5380838 0.5920739 0.5068206 0.7441921 0.8561808 0.4981466 0.6058956
-#&gt;  [64] 0.5568994 0.6231222 0.5201978 0.5341483 0.5249157 0.7097310 0.6326151
-#&gt;  [71] 0.6045546 0.6231723 0.6128792 0.5887924 0.4475043 0.4874812 0.4525960
-#&gt;  [78] 0.6214880 0.6311741 0.4831815 0.7504900 0.4813570 0.4646321 0.4613732
-#&gt;  [85] 0.5607701 0.6672973 0.5143100 0.3916813 0.4500226 0.6086516 0.7434411
-#&gt;  [92] 0.7686676 0.5272960 0.4228084 0.5744616 0.7464298 0.5065254 0.4968198
-#&gt;  [99] 0.6583188 0.4741185
+#&gt;  [22] 0.0000000 0.0000000 0.0000000 0.5847103 0.5124022 0.6710150 0.7145550
+#&gt;  [29] 0.6353941 0.5111437 0.5245252 0.6564112 0.5513211 0.6156385 0.7259136
+#&gt;  [36] 0.5135151 0.6892393 0.5938403 0.3489121 0.5357646 0.5921529 0.5082185
+#&gt;  [43] 0.3033514 0.4582151 0.4585708 0.5627931 0.5788645 0.3543564 0.5564960
+#&gt;  [50] 0.6498360 0.5270052 0.4829803 0.5348777 0.5795999 0.5069320 0.6916956
+#&gt;  [57] 0.7726151 0.4988517 0.5904737 0.5509167 0.6037588 0.5191042 0.5314533
+#&gt;  [64] 0.5233184 0.6672887 0.6109655 0.5894274 0.6037971 0.5958933 0.5769878
+#&gt;  [71] 0.4481745 0.4886986 0.4535777 0.6025104 0.6098765 0.4845336 0.6961400
+#&gt;  [78] 0.4827533 0.4660534 0.4627152 0.5541518 0.6367138 0.5137884 0.3828986
+#&gt;  [85] 0.4508566 0.5926182 0.6911656 0.7089736 0.5254296 0.4207828 0.5654328
+#&gt;  [92] 0.6932749 0.5066595 0.4976020 0.6301265 0.4756116 0.6041247 0.5584574
+#&gt;  [99] 0.5494746 0.5086801
 #&gt; 
 #&gt; $converge
-#&gt;  [1] -134.7541 -134.6997 -134.6693 -134.6522 -134.6425 -134.6369 -134.6337
-#&gt;  [8] -134.6317 -134.6306 -134.6299 -134.6294 -134.6292 -134.6290 -134.6289
-#&gt; [15] -134.6289
+#&gt;  [1] -135.2916 -134.9897 -134.8180 -134.7161 -134.6553 -134.6191 -134.5977
+#&gt;  [8] -134.5850 -134.5776 -134.5731 -134.5704 -134.5688 -134.5678 -134.5672
+#&gt; [15] -134.5669 -134.5666 -134.5665 -134.5664
 #&gt; 
 #&gt; $estim0
-#&gt;   p0    mean0       sd0 p1 mean1 sd1
-#&gt; 1  1 1.937324 0.9359373  0   NaN NaN
+#&gt;   p0    mean0      sd0 p1 mean1 sd1
+#&gt; 1  1 1.918567 0.933193  0   NaN NaN
 #&gt; 
 #&gt; $estim1
-#&gt;          p0   mean0       sd0        p1    mean1       sd1
-#&gt; 1 0.4293631 2.11701 0.8965158 0.5706369 1.702684 0.9363712
+#&gt;          p0    mean0       sd0        p1    mean1       sd1
+#&gt; 1 0.4445477 2.064563 0.9185471 0.5554523 1.718718 0.9173225
 #&gt; 
 #&gt; $loglik0
-#&gt; [1] -135.2829
+#&gt; [1] -134.9813
 #&gt; 
 #&gt; $loglik1
-#&gt; [1] -134.6289
+#&gt; [1] -134.5664
 #&gt; 
 #&gt; $lrts
-#&gt; [1] 1.308071
+#&gt; [1] 0.8297895
 #&gt; 
 #&gt; $p.value
-#&gt; [1] 0.8571429
+#&gt; [1] 0.6666667
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
@@ -297,20 +299,16 @@ All other functions are <code><a href='internal.html'>internal</a></code>.</p></
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#reference">Reference</a></li>
-
       <li><a href="#see-also">See also</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -318,13 +316,16 @@ All other functions are <code><a href='internal.html'>internal</a></code>.</p></
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

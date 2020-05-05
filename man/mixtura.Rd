@@ -22,12 +22,12 @@ character \code{"norm"} (Gaussian),
 \code{"nbinom"} (negative bionomial),
 or \code{"zinb"} (zero-inflated negative binomial)}
 
-\item{phi}{dispersion parameter\strong{:}
-positive numeric,
+\item{phi}{dispersion parameters\strong{:}
+numeric vector of length \code{q},
 or \code{NULL}}
 
-\item{pi}{zero-inflation parameter\strong{:}
-numeric between 0 and 1,
+\item{pi}{zero-inflation parameter(s)\strong{:}
+numeric vector of length \code{q},
 or \code{NULL}}
 
 \item{gamma}{offset\strong{:}
@@ -88,8 +88,9 @@ and \code{gamma} is replaced by a vector of ones.
 \section{Reference}{
 
 A Rauschenberger, RX Menezes, MA van de Wiel,
-NM van Schoor, and MA Jonker (2017).
-"Detecting SNPs with interactive effects on a quantitative trait",
+NM van Schoor, and MA Jonker (2020).
+"Semi-supervised mixture test for
+detecting markers associated with a quantitative trait",
 \emph{Manuscript in preparation}.
 }
 

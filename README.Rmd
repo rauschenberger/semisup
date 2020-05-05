@@ -44,8 +44,8 @@ utils::vignette("semisup")
 
 ## Reference
 
-A Rauschenberger, RX Menezes, MA van de Wiel, NM van Schoor, and MA Jonker (2018). Detecting SNPs with interactive effects on a quantitative trait.
-Manuscript in preparation. [html](https://arxiv.org/abs/1805.09175) [pdf](https://arxiv.org/pdf/1805.09175)
+A Rauschenberger, RX Menezes, MA van de Wiel, NM van Schoor, and MA Jonker (2020). Semi-supervised mixture test for detecting markers associated with a quantitative trait.
+Manuscript in preparation. (outdated version: [html](https://arxiv.org/abs/1805.09175) [pdf](https://arxiv.org/pdf/1805.09175))
 
 [![Platforms](http://www.bioconductor.org/shields/availability/devel/semisup.svg)](http://bioconductor.org/packages/devel/bioc/html/semisup.html#archives)
  [![Downloads](http://www.bioconductor.org/shields/downloads/semisup.svg)](http://bioconductor.org/packages/stats/bioc/semisup/)

@@ -1,3 +1,7 @@
+## semisup 1.14.0 (2020-05-05)
+
+* Updated documentation
+
 ## semisup 1.6.0 (2018-10-31)
 
 * Minor improvements

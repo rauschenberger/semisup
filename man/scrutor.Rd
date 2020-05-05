@@ -78,8 +78,9 @@ and \code{gamma} is replaced by a vector of ones.
 \section{Reference}{
 
 A Rauschenberger, RX Menezes, MA van de Wiel,
-NM van Schoor, and MA Jonker (2017).
-"Detecting SNPs with interactive effects on a quantitative trait",
+NM van Schoor, and MA Jonker (2020).
+"Semi-supervised mixture test for
+detecting markers associated with a quantitative trait",
 \emph{Manuscript in preparation}.
 }
 

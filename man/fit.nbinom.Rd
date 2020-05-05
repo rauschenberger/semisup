@@ -14,8 +14,8 @@ numeric vector of length \code{n}}
 integer vector of length \code{n},
 with entries \code{0}, \code{1} and \code{NA}}
 
-\item{phi}{dispersion parameter\strong{:}
-positive numeric,
+\item{phi}{dispersion parameters\strong{:}
+numeric vector of length \code{q},
 or \code{NULL}}
 
 \item{gamma}{offset\strong{:}
