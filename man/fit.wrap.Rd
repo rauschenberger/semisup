@@ -4,8 +4,7 @@
 \alias{fit.wrap}
 \title{Internal function}
 \usage{
-fit.wrap(y, z, dist, phi, pi, gamma, starts = 1, it.em = 100,
-  epsilon = 1e-04)
+fit.wrap(y, z, dist, phi, pi, gamma, starts = 1, it.em = 100, epsilon = 1e-04)
 }
 \arguments{
 \item{y}{\strong{observations:}
@@ -20,12 +19,12 @@ character \code{"norm"} (Gaussian),
 \code{"nbinom"} (negative bionomial),
 or \code{"zinb"} (zero-inflated negative binomial)}
 
-\item{phi}{dispersion parameter\strong{:}
-positive numeric,
+\item{phi}{dispersion parameters\strong{:}
+numeric vector of length \code{q},
 or \code{NULL}}
 
-\item{pi}{zero-inflation parameter\strong{:}
-numeric between 0 and 1,
+\item{pi}{zero-inflation parameter(s)\strong{:}
+numeric vector of length \code{q},
 or \code{NULL}}
 
 \item{gamma}{offset\strong{:}

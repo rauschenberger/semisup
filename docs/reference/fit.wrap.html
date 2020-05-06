@@ -8,21 +8,25 @@
 
 <title>Internal function — fit.wrap • semisup</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,11 +34,12 @@
 
 
 
-<meta property="og:title" content="Internal function — fit.wrap" />
 
+<meta property="og:title" content="Internal function — fit.wrap" />
 <meta property="og:description" content="This function fits the semi-supervised mixture model multiple times.
 It is called by mixtura and scrutor." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -46,6 +51,7 @@ It is called by mixtura and scrutor." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -64,7 +70,7 @@ It is called by mixtura and scrutor." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">semisup</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.7.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.13.3</span>
       </span>
     </div>
 
@@ -83,7 +89,6 @@ It is called by mixtura and scrutor." />
   <a href="../news/index.html">news</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/rauschenberger/semisup">
@@ -104,6 +109,7 @@ It is called by mixtura and scrutor." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -115,15 +121,12 @@ It is called by mixtura and scrutor." />
     </div>
 
     <div class="ref-description">
-    
     <p>This function fits the semi-supervised mixture model multiple times.
 It is called by <code><a href='mixtura.html'>mixtura</a></code> and <code><a href='scrutor.html'>scrutor</a></code>.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>fit.wrap</span>(<span class='no'>y</span>, <span class='no'>z</span>, <span class='no'>dist</span>, <span class='no'>phi</span>, <span class='no'>pi</span>, <span class='no'>gamma</span>, <span class='kw'>starts</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>it.em</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>fit.wrap</span>(<span class='no'>y</span>, <span class='no'>z</span>, <span class='no'>dist</span>, <span class='no'>phi</span>, <span class='no'>pi</span>, <span class='no'>gamma</span>, <span class='kw'>starts</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>it.em</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -147,14 +150,14 @@ or <code>"zinb"</code> (zero-inflated negative binomial)</p></td>
     </tr>
     <tr>
       <th>phi</th>
-      <td><p>dispersion parameter<strong>:</strong>
-positive numeric,
+      <td><p>dispersion parameters<strong>:</strong>
+numeric vector of length <code>q</code>,
 or <code>NULL</code></p></td>
     </tr>
     <tr>
       <th>pi</th>
-      <td><p>zero-inflation parameter<strong>:</strong>
-numeric between 0 and 1,
+      <td><p>zero-inflation parameter(s)<strong>:</strong>
+numeric vector of length <code>q</code>,
 or <code>NULL</code></p></td>
     </tr>
     <tr>
@@ -179,7 +182,7 @@ positive integer (defaults to <code>100</code>)</p></td>
 non-negative numeric (defaults to <code>1e-04</code>)</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>This function returns the parameter estimates, the posterior probabilities,
@@ -199,7 +202,6 @@ numeric</p></dd>
 <dt>lrts</dt><dd><p>likelihood-ratio test statistic<strong>:</strong>
 positive numeric</p></dd>
 
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The distributions are parametrised as follows:</p><ul>
@@ -215,18 +217,17 @@ positive numeric</p></dd>
 <code>y ~ ZINB(mu,phi,pi)</code> <br />
 <code>E[y]=(1-pi)*mu</code></p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>This is an <code><a href='internal.html'>internal</a></code> function.
 The user functions are <code><a href='mixtura.html'>mixtura</a></code> and <code><a href='scrutor.html'>scrutor</a></code>.</p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># data simulation</span>
 <span class='no'>n</span> <span class='kw'>&lt;-</span> <span class='fl'>100</span>
-<span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>,<span class='kw'>each</span><span class='kw'>=</span><span class='no'>n</span>/<span class='fl'>2</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Normal'>rnorm</a></span>(<span class='kw'>n</span><span class='kw'>=</span><span class='no'>n</span>,<span class='kw'>mean</span><span class='kw'>=</span><span class='fl'>2</span>*<span class='no'>z</span>,<span class='kw'>sd</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>:<span class='fl'>1</span>,<span class='kw'>each</span><span class='kw'>=</span><span class='no'>n</span>/<span class='fl'>2</span>)
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='kw'>n</span><span class='kw'>=</span><span class='no'>n</span>,<span class='kw'>mean</span><span class='kw'>=</span><span class='fl'>2</span>*<span class='no'>z</span>,<span class='kw'>sd</span><span class='kw'>=</span><span class='fl'>1</span>)
 <span class='no'>z</span>[(<span class='no'>n</span>/<span class='fl'>4</span>):<span class='no'>n</span>] <span class='kw'>&lt;-</span> <span class='fl'>NA</span>
 
 <span class='co'># model fitting</span>
@@ -235,46 +236,46 @@ The user functions are <code><a href='mixtura.html'>mixtura</a></code> and <code
 #&gt;   [6] 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000
 #&gt;  [11] 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000
 #&gt;  [16] 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.0000000000
-#&gt;  [21] 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.2473295913
-#&gt;  [26] 0.1379557866 0.8544822127 0.3841875124 0.0041310609 0.0169270544
-#&gt;  [31] 0.0220697324 0.7944980023 0.2022296583 0.0086261424 0.0327597395
-#&gt;  [36] 0.0193142680 0.0264029977 0.0230198982 0.2907475421 0.0002407683
-#&gt;  [41] 0.2558888422 0.0278693384 0.1250404459 0.3277304376 0.5949697991
-#&gt;  [46] 0.1746455913 0.0530796851 0.0544241558 0.3667698535 0.0015611585
-#&gt;  [51] 0.9593978916 0.2102229589 0.8329439855 0.8977331551 0.9569705370
-#&gt;  [56] 0.8350415480 0.9937334873 0.8749699675 0.9929639767 0.8812360262
-#&gt;  [61] 0.5337950599 0.8541554551 0.1592338070 0.9650017668 0.9434324186
-#&gt;  [66] 0.5544914154 0.9826455135 0.7223815318 0.9743138889 0.3226003417
-#&gt;  [71] 0.6503460304 0.9489936592 0.9342318171 0.9985108902 0.6934599906
-#&gt;  [76] 0.9628867440 0.4563643527 0.6269196112 0.3258857687 0.7523484843
-#&gt;  [81] 0.3064649277 0.7555833368 0.9872517582 0.9543410854 0.5382732574
-#&gt;  [86] 0.8515902748 0.7851914704 0.9547257052 0.9318496362 0.7592232555
-#&gt;  [91] 0.9199989616 0.9465726888 0.9643984557 0.9786604718 0.9569223533
-#&gt;  [96] 0.9473778735 0.5017967817 0.9796003996 0.9814440849 0.9712655799
+#&gt;  [21] 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.8425921935
+#&gt;  [26] 0.4084662331 0.0066437359 0.0245016147 0.0312726042 0.7853968391
+#&gt;  [31] 0.2318178842 0.0131493443 0.0449175639 0.0276646813 0.0368652934
+#&gt;  [36] 0.0325069881 0.3195242749 0.0004680964 0.2854726258 0.0387377356
+#&gt;  [41] 0.1510768584 0.3550874100 0.6020975215 0.2035236657 0.0697451110
+#&gt;  [46] 0.0713482334 0.3921015126 0.0026858865 0.3711345096 0.0049133548
+#&gt;  [51] 0.8218491385 0.8852113235 0.9470413234 0.8238578622 0.9904841501
+#&gt;  [56] 0.8625968713 0.9894537082 0.8687773658 0.5464222455 0.8422754448
+#&gt;  [61] 0.1874638518 0.9559626410 0.9323836723 0.5652770911 0.9764486990
+#&gt;  [66] 0.7183888664 0.9665881190 0.3501853431 0.6524783755 0.9383541242
+#&gt;  [71] 0.9226385563 0.9973239048 0.6918441633 0.9535939895 0.4754974138
+#&gt;  [76] 0.6311521557 0.3533258240 0.7460639013 0.3347035229 0.7490640459
+#&gt;  [81] 0.9821081960 0.9441602989 0.5505044669 0.8397911658 0.7766631154
+#&gt;  [86] 0.9445805976 0.9201395562 0.7524431750 0.9078371861 0.9357469764
+#&gt;  [91] 0.9552854771 0.9716816087 0.9469883654 0.9366126681 0.5172012021
+#&gt;  [96] 0.9727968251 0.9750004007 0.9630710243 0.3459891189 0.4238540425
 #&gt; 
 #&gt; $converge
-#&gt;  [1] -174.9421 -173.4297 -172.1316 -170.9595 -169.9704 -169.2455 -168.7956
-#&gt;  [8] -168.5575 -168.4457 -168.3952 -168.3710 -168.3576 -168.3489 -168.3427
-#&gt; [15] -168.3380 -168.3343 -168.3314 -168.3292 -168.3274 -168.3260 -168.3249
-#&gt; [22] -168.3241 -168.3234 -168.3229 -168.3225 -168.3221 -168.3219 -168.3217
-#&gt; [29] -168.3215 -168.3214 -168.3213
+#&gt;  [1] -175.6058 -174.4763 -173.5012 -172.5741 -171.7009 -170.9523 -170.3971
+#&gt;  [8] -170.0464 -169.8550 -169.7608 -169.7160 -169.6936 -169.6810 -169.6729
+#&gt; [15] -169.6672 -169.6630 -169.6598 -169.6573 -169.6555 -169.6540 -169.6529
+#&gt; [22] -169.6520 -169.6513 -169.6508 -169.6504 -169.6501 -169.6499 -169.6497
+#&gt; [29] -169.6495 -169.6494 -169.6493
 #&gt; 
 #&gt; $estim0
 #&gt;   p0     mean0      sd0 p1 mean1 sd1
-#&gt; 1  1 0.9255842 1.427628  0   NaN NaN
+#&gt; 1  1 0.9049049 1.431286  0   NaN NaN
 #&gt; 
 #&gt; $estim1
-#&gt;          p0       mean0      sd0        p1    mean1       sd1
-#&gt; 1 0.4099793 0.009548088 1.057611 0.5900207 2.052376 0.9803706
+#&gt;        p0      mean0      sd0      p1    mean1      sd1
+#&gt; 1 0.41292 0.01860373 1.093092 0.58708 2.005021 1.007327
 #&gt; 
 #&gt; $loglik0
-#&gt; [1] -177.5597
+#&gt; [1] -177.827
 #&gt; 
 #&gt; $loglik1
-#&gt; [1] -168.3213
+#&gt; [1] -169.6493
 #&gt; 
 #&gt; $lrts
-#&gt; [1] 18.4767
+#&gt; [1] 16.35543
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
@@ -282,18 +283,15 @@ The user functions are <code><a href='mixtura.html'>mixtura</a></code> and <code
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#see-also">See also</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -301,13 +299,16 @@ The user functions are <code><a href='mixtura.html'>mixtura</a></code> and <code
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

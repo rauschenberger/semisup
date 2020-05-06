@@ -27,16 +27,8 @@ character \code{"norm"} (Gaussian),
 \code{"nbinom"} (negative bionomial),
 or \code{"zinb"} (zero-inflated negative binomial)}
 
-\item{phi}{dispersion parameter\strong{:}
-positive numeric,
-or \code{NULL}}
-
 \item{phi}{dispersion parameters\strong{:}
 numeric vector of length \code{q},
-or \code{NULL}}
-
-\item{pi}{zero-inflation parameter\strong{:}
-numeric between 0 and 1,
 or \code{NULL}}
 
 \item{pi}{zero-inflation parameter(s)\strong{:}
