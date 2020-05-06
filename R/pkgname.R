@@ -29,7 +29,7 @@
 #' detecting markers associated with a quantitative trait",
 #' \emph{Manuscript in preparation}.
 #' 
-#' \email{a.rauschenberger@vumc.nl}
+#' \email{armin.rauschenberger@uni.lu}
 NULL 
 
 #-------------------------------------------------------------------------------
