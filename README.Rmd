@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 ## Scope
 
-Implements a parametric semi-supervised mixture model. The permutation test detects markers with main or interactive effects, without distinguishing them. Possible applications include genome-wide association analysis and differential expression analysis.
+Implements a parametric semi-supervised mixture model. The permutation test detects markers with main or interactive effects, without distinguishing them. Possible applications include genome-wide association studies and differential expression analyses.
 
 ## Installation
 

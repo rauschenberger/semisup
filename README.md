@@ -13,7 +13,7 @@ Status](https://codecov.io/github/rauschenberger/semisup/coverage.svg?branch=mas
 Implements a parametric semi-supervised mixture model. The permutation
 test detects markers with main or interactive effects, without
 distinguishing them. Possible applications include genome-wide
-association analysis and differential expression analysis.
+association studies and differential expression analyses.
 
 ## Installation
 

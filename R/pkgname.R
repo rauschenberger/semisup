@@ -28,7 +28,7 @@
 #' "Detecting SNPs with interactive effects on a quantitative trait",
 #' \emph{Manuscript in preparation}.
 #' 
-#' \email{a.rauschenberger@vumc.nl}
+#' \email{armin.rauschenberger@uni.lu}
 NULL 
 
 #-------------------------------------------------------------------------------
