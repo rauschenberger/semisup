@@ -1,5 +1,5 @@
 Package: semisup
-Version: 1.13.4
+Version: 1.12.3
 Title: Semi-Supervised Mixture Model
 Description: Implements a parametric semi-supervised mixture model. The permutation test detects markers with main or interactive effects, without distinguishing them. Possible applications include genome-wide association analysis and differential expression analysis.
 biocViews: SNP, GenomicVariation, SomaticMutation, Genetics,
