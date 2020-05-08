@@ -8,13 +8,6 @@ citEntry(entry="Article",
                              as.person("Natasja M. van Schoor"),
 			     as.person("Marianne A. Jonker")),
     journal = "Manuscript in preparation",
-<<<<<<< HEAD
-    year = 2020,
-    textVersion =
-		paste("Armin Rauschenberger, Renee X. Menezes, Mark A. van de Wiel, Natasja M. van Schoor, and Marianne A. Jonker (2020).",
-		"\"Semi-supervised mixture test for detecting markers associated with a quantitative trait\",",
-        	"Manuscript in prepration.")
-=======
     volume= "0:0",
     year = 2020,
     url = "http://arxiv.org/abs/1805.09175",
@@ -23,5 +16,4 @@ citEntry(entry="Article",
 		"\"Semi-supervised mixture test for detecting markers associated with a quantitative trait\",",
         	"Manuscript in prepration, 0:0.",
 		"http://arxiv.org/abs/1805.09175")
->>>>>>> 3a4f230... synchronisation
 )
